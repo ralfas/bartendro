@@ -22,17 +22,17 @@
     }
 
     button {
-      width: 120px;
+      width: 100px;
     }
     </style>
   </head>
   <body>
-    <div class="container" role="main">
+    <div class="container-fluid" role="main">
       
     </div>
 
     <script>$().ready(function(){
-      $('.container').html(buildPanels(drinks));
+      $('.container-fluid').html(buildPanels(drinks));
     });</script>
     <script src="/static/js/bootstrap.min.js"></script>
   </body>

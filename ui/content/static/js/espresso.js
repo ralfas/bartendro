@@ -50,7 +50,7 @@ function buildPanels (drinks) {
 
 	var out = '';
 	for (i in drinks) {
-		out += '<div class="col-md-6"><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">' + drinks[i].name + '</h3></div><div class="panel-body">';
+		out += '<div class="col-sm-6"><div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">' + drinks[i].name + '</h3></div><div class="panel-body">';
 		for (j in drinks[i].size_varieties) {
 
 			out += '<button class="btn btn-lg btn-default" data-volume=' + drinks[i].size_varieties[j].volume + '>' + drinks[i].size_varieties[j].name + '</button>';
