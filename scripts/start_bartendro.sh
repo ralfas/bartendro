@@ -1,4 +1,4 @@
 #!/bin/sh
 
 cd /home/pi/workspace/bartendro/ui
-./bartendro_server.py &
+./bartendro_server.py  --software-only &
