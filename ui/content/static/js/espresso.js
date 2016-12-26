@@ -26,7 +26,7 @@ function buildTableBody (drinks) {
 
 			out += '<tr>';
 			if (j == 0) out += '<td rowspan="' + drinks[i].size_varieties.length + '">' + drinks[i].name + '</td>';
-			out += '<td>' + drinks[i].size_varieties[j].name + '</td><td><input type="number" class="form-control" name="' + drinks[i].name + '-' + drinks[i].size_varieties[j].name + '" value=' + drinks[i].size_varieties[j].volume + ' /></td></tr>';
+			out += '<td>' + drinks[i].size_varieties[j].name + '</td><td><input type="number" class="form-control input-lg" name="' + drinks[i].name + '-' + drinks[i].size_varieties[j].name + '" value=' + drinks[i].size_varieties[j].volume + ' /></td></tr>';
 		}
 	}
 	return out;
