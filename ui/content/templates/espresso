@@ -13,16 +13,16 @@
     <script src="/static/js/jquery.min.js"></script>
 
     <style>
+    .container-fluid {
+      padding-top: 30px;
+    }
+
     .panel-heading, .panel-body {
       text-align: center;
     }
 
     .panel-body > button:nth-child(2) {
-      margin: 0 10px;
-    }
-
-    button {
-      width: 90px;
+      margin: 0 1.1em;
     }
     </style>
   </head>

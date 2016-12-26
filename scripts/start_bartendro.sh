@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd /home/robert/bartendro/ui
+cd /home/pi/workspace/bartendro/ui
 ./bartendro_server.py &
