@@ -53,7 +53,9 @@
         }).fail(function(){
           console.log('pour failed');
         }).always(function(){
-          $('.modal').modal('hide');
+          setTimeout(function(){
+            $('.modal').modal('hide');
+          }, 2000);
         });
       });
     });</script>
