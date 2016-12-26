@@ -68,6 +68,7 @@ from bartendro.view.ws import booze as ws_booze, dispenser as ws_dispenser, drin
                               misc as ws_misc, liquidlevel, option as ws_options
 
 from bartendro.view import espresso
+from bartendro.view.ws import espresso as espresso_ws
 
 @app.before_request
 def before_request(exception=None):

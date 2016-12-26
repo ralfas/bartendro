@@ -30,9 +30,32 @@
     <div class="container-fluid" role="main">
       
     </div>
+    <div class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Pouring espresso…</h4>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>$().ready(function(){
       $('.container-fluid').html(buildPanels(drinks));
+
+      $('button').click(function(){
+        var volume = $(this).data('volume');
+        $('.modal-title').text('Pouring ' + volume + 'ml of espresso…');
+        $('.modal').modal('show');
+
+        $.get('/ws/espresso/' + volume).done(function(){
+          console.log('pour successful');
+        }).fail(function(){
+          console.log('pour failed');
+        }).always(function(){
+          $('.modal').modal('hide');
+        });
+      });
     });</script>
     <script src="/static/js/bootstrap.min.js"></script>
   </body>

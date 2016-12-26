@@ -16,17 +16,19 @@ from bartendro.router.driver import MOTOR_DIRECTION_FORWARD, MOTOR_DIRECTION_BAC
 log = logging.getLogger('bartendro')
 
 
-@app.route('/ws/espresso/pour/<int:disp>')
-def ws_pour_espresso(disp):
+@app.route('/ws/espresso/<int:volume>')
+def ws_pour_espresso(volume):
     if app.globals.get_state() == fsm.STATE_ERROR:
         return "error state"
 
-    dispenser = db.session.query(Dispenser).filter_by(id=disp).first()
+    # assuming one dispenser!
+    dispenser = db.session.query(Dispenser).first()
     if not dispenser:
         return "Cannot test dispenser. Incorrect dispenser."
 
     try:
-        app.mixer.dispense_ml(dispenser, app.options.test_dispense_ml)
+        app.mixer.dispense_ml(dispenser, volume)
+        log.info("dispensed %sml of espresso" % volume)
     except BartendroBrokenError:
         raise InternalServerError
 
